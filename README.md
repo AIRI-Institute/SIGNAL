@@ -11,6 +11,7 @@ This repository follows the next structure:
 |   └──break_semantics                  # Code for generation of semantically incongruent sentences                
 ├── EEG_processing                      # Source code for EEG data analysis
 |   ├── z-scores_estimation             # Code for pairwise conditions comparison in EEG data
+|   ├── plot_inverse                    # Code for source localization and inverse modeling
 |   └── draw_plots                      # Code for visualisation
 ├── LLM_processing                      # Source code for LLM data analysis
 |   └── LLM_probing                     # Code for pairwise condition comparison of LLM data
