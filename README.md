@@ -84,6 +84,9 @@ The code allows to:
   - compute statistically significance of the results via permutation tests
   - obtain significant spatial-temporal clusters contrasting ERP between four congruency conditions
 - ```draw_plots.py```
+  - compute inverse model and apply to the epoched data
+  - visualize source localizations
+- ```draw_plots.py```
   - visualise z-score estimation 
   - make topographical plots of significantly different clusters
 
