@@ -5,6 +5,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 import os
+import pathlib
 import mne
 import numpy as np
 from scipy.signal import butter
@@ -12,6 +13,7 @@ from scipy.signal import lfilter
 import tqdm
 
 NCOND = 4
+PROJECT_ROOT = pathlib.Path(__file__).parent.parent.resolve()
 
 
 def get_zscores(epochs_reconst, cond1, cond2):
@@ -128,10 +130,10 @@ def permutation_test(x, z, Nt, Nc):
 
 if __name__ == '__main__':
     for p_ID in range(21):
-        perm_dir = 'permutation_results'
+        perm_dir = os.path.join(PROJECT_ROOT, 'permutation_results')
         if not os.path.exists(perm_dir):
             os.mkdir(perm_dir)
-        filename = os.path.join('epoched_data',
+        filename = os.path.join(PROJECT_ROOT, 'data', 'eeg',
                                 f'p{p_ID}_epochs.set')
         epochs = mne.read_epochs_eeglab(filename, verbose=True)
         # Here we group events into 3 blocks based on congruency type

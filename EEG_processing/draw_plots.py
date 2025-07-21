@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import pathlib
 import numpy as np
 import mne
 import tqdm
@@ -10,7 +11,7 @@ from matplotlib import pyplot as plt
 import matplotlib.colors as colors
 
 NCOND = 4
-WORKDIR =  os.getcwd()
+WORKDIR = pathlib.Path(__file__).parent.parent.resolve()
 
 def plot_permutation_test(p=None, Nc=12, show = False, folder = '.', 
                           alpha=0.05, postfix=None, cond_dict = None,

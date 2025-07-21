@@ -4,6 +4,7 @@
 import warnings
 warnings.filterwarnings('ignore')
 import os
+import pathlib
 import mne
 import json
 import matplotlib.pyplot as plt
@@ -12,13 +13,13 @@ from mne.datasets import sample
 from mne.minimum_norm import apply_inverse, make_inverse_operator, apply_inverse_epochs
 from mne.datasets import eegbci, fetch_fsaverage
 
-WORKDIR = 'Your workdir'
+WORKDIR = pathlib.Path(__file__).parent.parent.resolve()
 
 
 def read_epochs(pID=None, filepath=None, workdir=None):
     if filepath is None:
         filepath = os.path.join(workdir, f'participants/p{pID}/p{pID}_raw.fif')
-    raw = mne.io.read_raw_fif(filepath )
+    raw = mne.io.read_raw_fif(filepath)
     montage = mne.channels.make_standard_montage("standard_1005")
     raw.set_montage(montage)
     raw.set_eeg_reference(projection=True)  # needed for inverse modeling
@@ -29,9 +30,9 @@ def read_epochs(pID=None, filepath=None, workdir=None):
     return epochs
 subject = "fsaverage"
 fs_dir = fetch_fsaverage(verbose=True)
-subjects_dir = op.dirname(fs_dir)
-src = op.join(fs_dir, "bem", "fsaverage-ico-5-src.fif")
-bem = op.join(fs_dir, "bem", "fsaverage-5120-5120-5120-bem-sol.fif")
+subjects_dir = os.path.dirname(fs_dir)
+src = os.path.join(fs_dir, "bem", "fsaverage-ico-5-src.fif")
+bem = os.path.join(fs_dir, "bem", "fsaverage-5120-5120-5120-bem-sol.fif")
 trans = os.path.join(WORKDIR, 'p0-trans.fif')
 LABELS = mne.read_labels_from_annot(subject, parc='HCPMMP1')
 label_names = [(idx, lab.name) for idx, lab in enumerate(LABELS)]
