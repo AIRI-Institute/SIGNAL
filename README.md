@@ -80,6 +80,7 @@ To download all data run from environment with ```huggingface-hub``` installed:
 ```python
 python download_data.py
 ```
+If you want to just browse files or look closer at the dataset, it is available [here](https://huggingface.co/datasets/ContributorsSIGNAL/SIGNAL)
 
 ## EEG analysis
 
