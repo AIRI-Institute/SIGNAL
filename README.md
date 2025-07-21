@@ -15,7 +15,8 @@ This repository follows the next structure:
 |   └── draw_plots                      # Code for visualisation
 ├── LLM_processing                      # Source code for LLM data analysis
 |   └── LLM_probing                     # Code for pairwise condition comparison of LLM data
-├── STIMULI.xlsx                        # Dataset with linguistic stimuli and their main parameters
+├── .gitignore                          # gitignore file which ignores data directory
+├── download_data.py                    # Script to download add data into data directory
 ├── README.md                           # README file
 └── requirements.txt                    # A file with requirements 
 ```
@@ -71,6 +72,13 @@ To generate grammatically incongruent sentences run the following script:
 
 ```bash
 python break_grammar.py --input congruent_sentences.csv --output gram_inconguent.csv
+```
+
+## Download data
+
+To download all data run from environment with ```huggingface-hub``` installed:
+```python
+python download_data.py
 ```
 
 ## EEG analysis
