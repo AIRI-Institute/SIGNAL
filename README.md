@@ -10,11 +10,13 @@ This repository follows the next structure:
 |   ├──break_grammar                    # Code for generation of grammatically incongruent sentences  
 |   └──break_semantics                  # Code for generation of semantically incongruent sentences                
 ├── EEG_processing                      # Source code for EEG data analysis
-|   ├── z-scores_estimation             # Code for pairwise conditions comparison in EEG data
-|   ├── plot_inverse                    # Code for source localization and inverse modeling
-|   └── draw_plots                      # Code for visualisation
+|   ├── EEG_analysis                    # Code for pairwise conditions comparison in EEG data
+|   └── plot_inverse                    # Code for source localization and inverse modeling
 ├── LLM_processing                      # Source code for LLM data analysis
 |   └── LLM_probing                     # Code for pairwise condition comparison of LLM data
+├── stimuli.csv                         # File with linguistic stimuli and their main parameters
+├── stimuli_metadata.json               # File with detailed description of every column of stimuli.csv and associated datatypes
+├── download_data.py                    # Script to download add data into data directory
 ├── .gitignore                          # gitignore file which ignores data directory
 ├── download_data.py                    # Script to download add data into data directory
 ├── README.md                           # README file
@@ -87,30 +89,26 @@ If you want to just browse files or look closer at the dataset, it is available 
 EEG data include recordings of 21 participants revealing a statistical difference between stimuli congruence conditions on a neuro-physiological level.
 
 The code allows to:
-- ```z-scores_estimation.py```
+- ```EEG_analysis.ipynb```
   - compute averageg event-related potential data within each condition 
   - compute z-scores to estimate pairwise differences between congruency conditions
   - compute statistically significance of the results via permutation tests
   - obtain significant spatial-temporal clusters contrasting ERP between four congruency conditions
-- ```draw_plots.py```
-  - compute inverse model and apply to the epoched data
-  - visualize source localizations
-- ```draw_plots.py```
   - visualise z-score estimation 
   - make topographical plots of significantly different clusters
+- ```plot_inverse.ipynb```
+  - compute inverse model and apply to the epoched data
+  - visualize source localizations
 
 The results demonstrated the presence of significant topically organized neurolinguistically plausible differences in the EEG data between incongruity conditions.
 
-![](./EEG_processing/topoplot.png)
+![](./EEG_processing/topoplot_Incongr-Congr.pdf)
 
-The preprocessed and epoched EEG data is available at https://huggingface.co/datasets/zhuravlevahana/SIGNAL/tree/main.
+The preprocessed and epoched EEG data is available at [HuggingFace](https://huggingface.co/datasets/ContributorsSIGNAL/SIGNAL)
 
 ## LLM probing
 
 LLM probing data include experiments for the probing validation study (including supplementary tokenization effect study) and the algorithm of layer-wise condition contrasting based on ruBERT LLM activations. LLM probing allows for model inference and subsequent diagnostic classification study on datasets compatible with the one used in the study. 
 
-`SIGNAL_SPREADSHEET` should be replaced with the link to the spreadsheet containing the data of interest.
-
 We applied Representational Similarity Analysis (RDM) to evaluate activation difference between 12 types of stimuli (three groups of sentences different by syntax structure each divided into four congruency conditions) detected by LLMs. As a result, we obtained layer-wise Representational Dissimilarity Matrices (RDMs) contrasting each pair of condition presented. The results show that the discrimination accuracy grows with a layer number, and the lates layers are significantly more sensible to sentence structure than to the congruency type.
 
-![](./LLM_processing/RDMs.png)
