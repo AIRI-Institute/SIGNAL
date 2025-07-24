@@ -1,0 +1,154 @@
+{
+    "sentence_id": {
+        "description": "Unique identifier of congruent sentence",
+        "dtype": "int"
+    },
+    "sentence": {
+        "description": "Sentence stimuli including congruent and incongruent variants",
+        "dtype": "str"
+    },
+    "congruent": {
+        "description": "Original congruent sentence for each respective congruent and incongruent counterparts",
+        "dtype": "str"
+    },
+    "structure": {
+        "description": "Syntactic structure of the sentence",
+        "dtype": "str"
+    },
+    "length": {
+        "description": "Sentence length in words",
+        "dtype": "int"
+    },
+    "target": {
+        "description": "Type of (in)congruence condition (\"normal\" - congruent, \"semantics\" - semantically incongruent, \"grammar\" - grammatically incongruent, \"semantics_grammar\" - semantically-grammatically incongruent)",
+        "dtype": "str"
+    },
+    "position": {
+        "description": "Position of the word with semantic and/or grammatical error within incongruent sentences",
+        "dtype": "int"
+    },
+    "most_popular": {
+        "description": "Most popular answer ((in)congruence condition) within assessors in the online validation experiment",
+        "dtype": "str"
+    },
+    "percent": {
+        "description": "Percent of accessors who gave the answer specified in the \"most_popular\" column in the online validation experiment",
+        "dtype": "float"
+    },
+    "semantics_grammar": {
+        "description": "Percent of accessors who evaluated the sentence to be semantically-grammatically incongruent in the online validation experiment",
+        "dtype": "float"
+    },
+    "semantics": {
+        "description": "Percent of accessors who evaluated the sentence to be semantically incongruent in the online validation experiment",
+        "dtype": "float"
+    },
+    "grammar": {
+        "description": "Percent of accessors who evaluated the sentence to be grammatically incongruent in the online validation experiment",
+        "dtype": "float"
+    },
+    "no": {
+        "description": "Percent of accessors who evaluated the sentence to be congruent in the online validation experiment",
+        "dtype": "float"
+    },
+    "unknown": {
+        "description": "The percentage of answers in the online validation experiment where sentences were judged incongruent, with the identified error type being neither semantic nor grammatical.",
+        "dtype": "float"
+    },
+    "subject": {
+        "description": "Sentence subject argument",
+        "dtype": "str"
+    },
+    "verb": {
+        "description": "Sentence verb argument",
+        "dtype": "str"
+    },
+    "object": {
+        "description": "Sentence object argument",
+        "dtype": "str"
+    },
+    "gen": {
+        "description": "Sentence genitive argument",
+        "dtype": "str"
+    },
+    "adj": {
+        "description": "Sentence adjective argument",
+        "dtype": "str"
+    },
+    "subject_lemma": {
+        "description": "Lemma (initial form) of sentence subject argument",
+        "dtype": "str"
+    },
+    "subject_length": {
+        "description": "Length of sentence subject argument in syllables",
+        "dtype": "int"
+    },
+    "subject_gender": {
+        "description": "Linguistic gender of sentence subject argument",
+        "dtype": "str"
+    },
+    "subject_ipm": {
+        "description": "Frequency (Instances Per Million) of sentence subject argument based on Russian National Corpus (https://ruscorpora.ru/)",
+        "dtype": "float"
+    },
+    "verb_lemma": {
+        "description": "Lemma (initial form) of sentence verb argument",
+        "dtype": "str"
+    },
+    "verb_length": {
+        "description": "Length of sentence verb argument in syllables",
+        "dtype": "int"
+    },
+    "verb_ipm": {
+        "description": "Frequency (Instances Per Million) of sentence verb argument based on Russian National Corpus (https://ruscorpora.ru/)",
+        "dtype": "float"
+    },
+    "object_lemma": {
+        "description": "Lemma (initial form) of sentence object argument",
+        "dtype": "str"
+    },
+    "object_length": {
+        "description": "Length of sentence object argument in syllables",
+        "dtype": "int"
+    },
+    "object_gender": {
+        "description": "Linguistic gender of sentence object argument",
+        "dtype": "str"
+    },
+    "object_ipm": {
+        "description": "Frequency (Instances Per Million) of sentence object argument based on Russian National Corpus (https://ruscorpora.ru/)",
+        "dtype": "float"
+    },
+    "gen_lemma": {
+        "description": "Lemma (initial form) of sentence genitive argument",
+        "dtype": "str"
+    },
+    "gen_length": {
+        "description": "Length of sentence genitive argument in syllables",
+        "dtype": "int"
+    },
+    "gen_gender": {
+        "description": "Linguistic gender of sentence genitive argument",
+        "dtype": "str"
+    },
+    "gen_ipm": {
+        "description": "Frequency (Instances Per Million) of sentence genitive argument based on Russian National Corpus (https://ruscorpora.ru/)",
+        "dtype": "float"
+    },
+    "adj_lemma": {
+        "description": "Lemma (initial form) of sentence adjective argument",
+        "dtype": "str"
+    },
+    "adj_length": {
+        "description": "Length of sentence adjective argument in syllables",
+        "dtype": "int"
+    },
+    "adj_gender": {
+        "description": "Linguistic gender of sentence adjective argument",
+        "dtype": "str"
+    },
+    "adj_ipm": {
+        "description": "Frequency (Instances Per Million) of sentence adjective argument based on Russian National Corpus (https://ruscorpora.ru/)",
+        "dtype": "float"
+    }
+}
