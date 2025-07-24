@@ -102,7 +102,7 @@ The code allows to:
 
 The results demonstrated the presence of significant topically organized neurolinguistically plausible differences in the EEG data between incongruity conditions.
 
-![](./EEG_processing/topoplot_Incongr-Congr.pdf)
+![](./EEG_processing/topoplot_Incongr-Congr.png)
 
 The preprocessed and epoched EEG data is available at [HuggingFace](https://huggingface.co/datasets/ContributorsSIGNAL/SIGNAL)
 
