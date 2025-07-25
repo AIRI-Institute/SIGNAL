@@ -5,18 +5,16 @@ Dataset for Semantic and Inferred Grammar Neurological Analysis of Language
 
 This repository follows the next structure:
 ```
-├── stimuli_generation                  # Linguistic stimuli preparation
-|   ├──stimuli_check                    # Code for estimation and selection of stimuli parameters
-|   ├──break_grammar                    # Code for generation of grammatically incongruent sentences  
-|   └──break_semantics                  # Code for generation of semantically incongruent sentences                
-├── EEG_processing                      # Source code for EEG data analysis
-|   ├── EEG_analysis                    # Code for pairwise conditions comparison in EEG data
-|   └── plot_inverse                    # Code for source localization and inverse modeling
-├── LLM_processing                      # Source code for LLM data analysis
-|   └── LLM_probing                     # Code for pairwise condition comparison of LLM data
-├── stimuli.csv                         # File with linguistic stimuli and their main parameters
-├── stimuli_metadata.json               # File with detailed description of every column of stimuli.csv and associated datatypes
-├── download_data.py                    # Script to download add data into data directory
+├── stimuli_generation/                 # Linguistic stimuli preparation
+|   ├── break_grammar.py                # Code for generation of grammatically incongruent sentences  
+|   ├── break_semantics.py              # Code for generation of semantically incongruent sentences
+|   ├── stimuli_check.ipynb             # Code for estimation and selection of stimuli parameters
+|   └── utils.py                        # Code with helper functions                
+├── eeg_processing/                     # Source code for EEG data analysis
+|   ├── eeg_analysis.ipynb              # Code for pairwise conditions comparison in EEG data
+|   └── plot_inverse.ipynb              # Code for source localization and inverse modeling
+├── llm_processing/                     # Source code for LLM data analysis
+|   └── llm_probing.ipynb               # Code for pairwise condition comparison of LLM data
 ├── .gitignore                          # gitignore file which ignores data directory
 ├── download_data.py                    # Script to download add data into data directory
 ├── README.md                           # README file
@@ -79,17 +77,17 @@ python break_grammar.py --input congruent_sentences.csv --output gram_inconguent
 ## Download data
 
 To download all data run from environment with ```huggingface-hub``` installed:
-```python
+```bash
 python download_data.py
 ```
-If you want to just browse files or look closer at the dataset, it is available [here](https://huggingface.co/datasets/ContributorsSIGNAL/SIGNAL)
+If you want to just browse files or look closer at the dataset, the preprocessed and epoched EEG data is available at [HuggingFace](https://huggingface.co/datasets/ContributorsSIGNAL/SIGNAL)
 
 ## EEG analysis
 
 EEG data include recordings of 21 participants revealing a statistical difference between stimuli congruence conditions on a neuro-physiological level.
 
 The code allows to:
-- ```EEG_analysis.ipynb```
+- ```eeg_analysis.ipynb```
   - compute averageg event-related potential data within each condition 
   - compute z-scores to estimate pairwise differences between congruency conditions
   - compute statistically significance of the results via permutation tests
@@ -103,8 +101,6 @@ The code allows to:
 The results demonstrated the presence of significant topically organized neurolinguistically plausible differences in the EEG data between incongruity conditions.
 
 ![](./EEG_processing/topoplot_Incongr-Congr.png)
-
-The preprocessed and epoched EEG data is available at [HuggingFace](https://huggingface.co/datasets/ContributorsSIGNAL/SIGNAL)
 
 ## LLM probing
 
