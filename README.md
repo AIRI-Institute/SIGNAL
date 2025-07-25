@@ -100,7 +100,7 @@ The code allows to:
 
 The results demonstrated the presence of significant topically organized neurolinguistically plausible differences in the EEG data between incongruity conditions.
 
-![](./EEG_processing/topoplot_Incongr-Congr.png)
+![](./EEG_processing/topoplot_incongr-congr.png)
 
 ## LLM probing
 
