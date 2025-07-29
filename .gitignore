@@ -1,2 +1,5 @@
 data/
 eeg_processing/signal_result/
+llm_processing/4x4/
+llm_processing/12x12/
+llm_processing/results/
