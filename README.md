@@ -56,6 +56,15 @@ The congruency conditions were  semantical, grammatical, or semantical-grammatic
 Anomalous stimuli were generated using language model, and validity of them was checked via an online validation study with 133 respondents to prove that (in)congruence type is correctly identified by Russian native speakers.
 The reliability and interpretability of dataset was proven by EEG estimation results and LLMs probing.
 
+## Setup your environment
+
+```bash
+conda create -n SIGNAL python=3.10
+conda activate SIGNAL
+
+pip install -r requirements.txt
+```
+
 ## Stimuli generation
 
 The code allows to 
